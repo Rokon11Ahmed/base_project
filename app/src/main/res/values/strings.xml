@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">base_project</string>
+    <string name="IDS_ROUTE_MAIN">route_main</string>
+    <string name="IDS_ROUTE_AUTH">route_auth</string>
+</resources>
