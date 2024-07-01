@@ -17,6 +17,6 @@ fun BottomNavGraph(navController: NavHostController) {
     ) {
         homeScreen()
         profileScreen()
-        articlesScreen()
+        articlesScreen(navController = navController)
     }
 }

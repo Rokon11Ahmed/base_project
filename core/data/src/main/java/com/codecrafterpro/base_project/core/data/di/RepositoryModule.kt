@@ -1,5 +1,6 @@
 package com.codecrafterpro.base_project.core.data.di
 
+import com.codecrafterpro.base_project.core.data.repository.CharactersRepository
 import com.codecrafterpro.base_project.core.network.ktor.ApiService
 import com.codecrafterpro.base_project.core.data.repository.EpisodesRepository
 import dagger.Module
@@ -14,5 +15,10 @@ object RepositoryModule {
     @Provides
     fun provideEpisodesRepository(apiService: ApiService): EpisodesRepository{
         return EpisodesRepository(apiService)
+    }
+
+    @Provides
+    fun provideCharactersRepository(apiService: ApiService): CharactersRepository{
+        return CharactersRepository(apiService)
     }
 }
