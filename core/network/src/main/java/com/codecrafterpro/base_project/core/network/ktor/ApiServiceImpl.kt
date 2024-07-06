@@ -1,6 +1,7 @@
 package com.codecrafterpro.base_project.core.network.ktor
 
 import com.codecrafterpro.base_project.core.model.character.CharactersRemoteResponse
+import com.codecrafterpro.base_project.core.model.character.RemoteCharacter
 import com.codecrafterpro.base_project.core.model.episode.EpisodesRemoteResponse
 import com.codecrafterpro.base_project.core.network.utils.Constant.CHARACTERS
 import com.codecrafterpro.base_project.core.network.utils.Constant.EPISODES
@@ -16,5 +17,9 @@ class ApiServiceImpl @Inject constructor(private val httpClient: HttpClient): Ap
 
     override suspend fun getCharacters(): CharactersRemoteResponse {
         return httpClient.get(CHARACTERS).body<CharactersRemoteResponse>()
+    }
+
+    override suspend fun getCharacterDetails(id: String): RemoteCharacter {
+        return  httpClient.get("$CHARACTERS/$id").body<RemoteCharacter>()
     }
 }
