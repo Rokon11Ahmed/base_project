@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.codecrafterpro.base_project.core.domain.usecase.GetCharacterDetailsUseCase
 import com.codecrafterpro.base_project.core.model.Resource
 import com.codecrafterpro.base_project.core.model.character.Character
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,6 +14,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+@HiltViewModel
 class ArticlesDetailsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     val getCharacterDetailsUseCase: GetCharacterDetailsUseCase
